@@ -1,19 +1,20 @@
 package mang;
-public class Arrayparameter(call).java {
-
+public class Arrayparameter {
     public static void main(String[] args) {
-        int[] iq = {126, 84, 149, 167, 95};
-        double avg = average(iq);
-        System.out.println("Average IQ = " + avg);
+        int[] input = {23, 34, 65, 4};
+        int[] output = stutter(input);
+        System.out.print("Mang lap lai : ");
+        for (int num : output) {
+            System.out.print(num + " ");
         }
-    public static double average(int[] numbers) {
-        if (numbers.length == 0) {
-            throw new IllegalArgumentException("Array cannot be empty.");
+    }
+    public static int[] stutter(int[] numbers) {
+        int[] result = new int[2 * numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            result[2 * i] = numbers[i];
+            result[2 * i + 1] = numbers[i];
         }
-        int sum = 0;
-        for (int num : numbers) {
-            sum += num;
-        }
-        return (double) sum / numbers.length;
+        
+        return result;
     }
 }
